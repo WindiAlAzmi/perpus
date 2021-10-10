@@ -1,0 +1,55 @@
+section .recipe {
+    background-color:white !important;
+}
+h3 {
+    text-align:center;
+    color:black;
+}
+.findRecipe-input {
+    margin:0 auto;
+    background-color:#F0B214;
+    color:white;
+}   
+.findRecipe-input {
+    width:50%;
+}
+.recipeBtn {
+    color:white;
+}
+@media screen and (max-width: 992px) {
+    .findRecipe-input {
+        width:80%;
+    }
+    .recipeBtn {
+        width:40%;
+        font-size:20px;
+        
+    }
+
+}
+@media screen and (max-width: 600px) {
+        .findRecipe-input {
+            width:100%;
+        }
+        .recipeBtn {
+            width:40%;
+            font-size:18px;
+            padding:0px;
+            
+        }
+
+ @media screen and (max-width: 375px) {
+    .recipeBtn {
+        width:40%;
+        font-size:15px;
+        padding:0px;
+        
+    }
+    .recipeInput {
+        width:50%;
+    }
+    .findRecipe-input {
+        width:100%;
+
+    }
+ }

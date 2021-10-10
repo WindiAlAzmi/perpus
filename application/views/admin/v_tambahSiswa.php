@@ -1,0 +1,92 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        <?= $judul ?>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active"><?= $isi ?></li>
+      </ol>
+    </section>
+
+            
+    <br>
+    <section class="content">
+    <div class="col-md-12">
+    <?php 
+             if($this->session->flashdata('message')) {
+               echo '<div class="alert alert-danger"></i>';
+               echo $this->session->flashdata('message');
+               echo '</div>';
+             }
+             ?>
+          <!-- Horizontal Form -->
+          <div class="box box-info">
+
+            <div class="box-header with-border">
+              <h3 class="box-title"><?= $judul; ?></h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+          
+            <form method="post" action="<?= base_url('admin/anggota/tambah_siswa_aksi'); ?>"  class="form-horizontal" />
+            <div class="box-body">
+              <div class="row">
+                <div class="col-lg-5 col-lg-offset-1">
+                    <div class="form-group">
+                        <label for="id" class="control-label">Kode Siswa</label>
+                        <input type="text" class="form-control" value="<?= $id_siswa; ?>" id="id" name="id" readonly>
+                      </div>
+
+                    <div class="form-group">
+                      <label for="nama" class="control-label">Nama </label>
+                        <input type="text" class="form-control" name="nama" id="nama" placeholder="nama siswa">
+                        <?php echo form_error('nama','<div class="text-small text-danger">','</div>'); ?>
+                      </div>
+
+                    <div class="form-group">
+                      <label for="nis" class="control-label">NIS</label>
+                        <input type="text" class="form-control" name="nis" id="nis" placeholder="NIS">
+                        <?php echo form_error('nip','<div class="text-small text-danger">','</div>'); ?>
+                    </div>
+
+                </div>
+        
+
+                <div class="col-lg-4 col-lg-offset-1">
+                    <div class="form-group">
+                    <label for="password" class="control-label">Password</label>
+                      <input type="text" class="form-control" name="password" id="password">
+                      <?php echo form_error('password','<div class="text-small text-danger">','</div>'); ?>
+                    </div>
+              
+        
+
+                    <div class="form-group">
+                    <label for="kelas" class="control-label">Kelas</label>
+                    <select class="form-control" name="kelas" id="kelas">
+                      <option value="" selected> -- Pilih Kelas -- </option>
+                      <?php
+                        foreach($kelas as $kl) { ?>
+                         <option value="<?= $kl->id_kelas ?>" > <?= $kl->nama_kelas; ?> </option>
+                      <?php } ?>
+                    </select>
+                    <?php echo form_error('kelas','<div class="text-small text-danger">','</div>'); ?>
+                </div>
+
+
+                </div>
+              </div>
+            </div>
+
+              <div class="box-footer">
+                <a href="<?= base_url() ?>admin/anggota/data_siswa" class="btn btn-warning">Cancel</a>
+                <button type="submit" class="btn btn-primary">Simpan</button>
+              </div>
+            </form>
+         </div>
+    </div>
+
+    </section>
+    </div>

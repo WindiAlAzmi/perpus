@@ -1,0 +1,101 @@
+.navbar-brand2 {
+  color:#F0B214;
+}
+
+.navbar{
+ background-color:white !important;
+}
+
+.nav-item a{
+ color:black !important;
+}
+
+
+.login {
+ border-bottom:6px solid #F0B214;
+}
+
+
+.secMasak {
+    background-color:white !important;
+  }
+  .kuning{
+    background-color:#F0B214;
+    border-radius:100px !important;
+    margin-right:20px;
+    
+  }
+  .putih{
+    background-color:#ffff;
+    border-radius:100px !important;
+    border:1px solid black;
+    
+  }
+  .kuning a{
+    color:white !important;
+    text-decoration:none;
+    
+  }
+
+  .putih a {
+    color:black;
+    text-decoration:none;
+  }
+  .masak {
+    width:30%;
+  }
+
+  .showBtn {
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    align-items:center;
+  }
+  
+  @media screen and (max-width: 992px) {
+
+    .masak {
+      width:50%;
+    }
+    .showBtn{
+      flex-direction:row;
+      align-items:center;
+    }
+
+    .login {
+      border-bottom:none;
+    }
+
+    @media screen and (max-width: 600px) {
+      .showBtn{
+        flex-direction:row;
+        align-items:center;
+        justify-content:center;f
+        flex-wrap:wrap;
+        width:100%;
+        
+      }
+
+      @media screen and (max-width: 375px) {
+        .showBtn{
+          flex-direction:row;
+          width:100%;
+
+        }
+          .kuning{
+           margin-right:3px;
+           width:40%;
+           padding:4px;
+          }
+
+          .putih {
+            width:40%;
+            padding:4px;
+          }
+
+          .kuning a, .putih a {
+            font-size:16px;
+          }
+        
+      
+  }

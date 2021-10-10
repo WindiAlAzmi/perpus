@@ -1,0 +1,22 @@
+.navbar-brand2 {
+    color:#F0B214;
+ }
+
+ .navbar{
+   background-color:white !important;
+ }
+
+ .nav-item a{
+   color:black !important;
+ }
+
+
+ .login {
+   border-bottom:6px solid #F0B214;
+ }
+
+ @media screen and (max-width: 992px) {
+   .login {
+     border-bottom:none;
+   }
+ }
