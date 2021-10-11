@@ -101,4 +101,40 @@ class M_wali extends CI_Model
         return $query;
     }
 
+    public function laporan($status, $id_jenis, $dari, $sampai, $id_kelas) {
+        $this->db->select('*');
+        $this->db->from('pengembalian_buku');
+        $this->db->join('siswa','pengembalian_buku.id_siswa=siswa.id');
+        $this->db->join('buku','pengembalian_buku.id_buku=buku.id');
+        $this->db->join('status','pengembalian_buku.id_status=status.id');
+        $this->db->join('kelas','pengembalian_buku.id_kelas=kelas.id_kelas');
+        $this->db->join('jenis_buku','pengembalian_buku.id_jenis=jenis_buku.id_jenis');
+        $this->db->where('pengembalian_buku.id_status', $status);
+        $this->db->where('pengembalian_buku.id_jenis', $id_jenis);
+        $this->db->where('pengembalian_buku.tgl_pinjam >=', $dari);
+        $this->db->where('pengembalian_buku.tgl_kembalikan <=', $sampai);
+        $this->db->where('pengembalian_buku.id_kelas', $id_kelas);
+        $this->db->order_by('pengembalian_buku.id_pengembalian','DESC');
+        $query = $this->db->get();
+        return $query;
+    }
+    
+    public function laporan2($status, $id_jenis, $id_kelas) {
+        $this->db->select('*');
+        $this->db->from('pengembalian_buku');
+        $this->db->join('siswa','pengembalian_buku.id_siswa=siswa.id');
+        $this->db->join('buku','pengembalian_buku.id_buku=buku.id');
+        $this->db->join('status','pengembalian_buku.id_status=status.id');
+        $this->db->join('kelas','pengembalian_buku.id_kelas=kelas.id_kelas');
+        $this->db->join('jenis_buku','pengembalian_buku.id_jenis=jenis_buku.id_jenis');
+        $this->db->where('pengembalian_buku.id_status', $status);
+        $this->db->where('pengembalian_buku.id_jenis', $id_jenis);
+        $this->db->where('pengembalian_buku.id_kelas', $id_kelas);
+        $this->db->order_by('pengembalian_buku.id_pengembalian','DESC');
+        $query = $this->db->get();
+        return $query;
+    }
+    
+    
+
 }

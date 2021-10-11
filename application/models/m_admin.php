@@ -254,8 +254,8 @@ public function laporan($status, $id_jenis, $dari, $sampai) {
     $this->db->join('jenis_buku','pengembalian_buku.id_jenis=jenis_buku.id_jenis');
     $this->db->where('pengembalian_buku.id_status', $status);
     $this->db->where('pengembalian_buku.id_jenis', $id_jenis);
-    $this->db->where('pengembalian_buku.tgl_pinjam>=', $dari);
-    $this->db->where('pengembalian_buku.tgl_kembalikan<=', $sampai);
+    $this->db->where('pengembalian_buku.tgl_pinjam >=', $dari);
+    $this->db->where('pengembalian_buku.tgl_kembalikan <=', $sampai);
     $this->db->order_by('pengembalian_buku.id_pengembalian','DESC');
     $query = $this->db->get();
     return $query;

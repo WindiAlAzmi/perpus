@@ -141,6 +141,19 @@
             <li><a href="<?= base_url() ?>wali_kelas/kembali_paket"><i class="fa fa-circle-o"></i>Pengembalian</a></li>
           </ul>
         </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa  fa-file-text"></i>
+            <span>Laporan</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?= base_url() ?>wali_kelas/laporan/peminjaman_bacaan"><i class="fa fa-circle-o"></i>peminjaman buku bacaan</a></li>
+            <li><a href="<?= base_url() ?>wali_kelas/laporan/peminjaman_paket"><i class="fa fa-circle-o"></i>peminjaman buku paket</a></li>
+          </ul>
+        </li>
         <hr>
         <li><a href="<?= base_url('auth/logout') ?>"><i class="fa  fa-sign-out"></i> <span>Logout</span></a></li>
      <?php } ?>

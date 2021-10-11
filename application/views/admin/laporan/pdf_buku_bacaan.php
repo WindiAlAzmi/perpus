@@ -74,6 +74,24 @@ $table1 = '<table border="0" width="650px">';
               </tr>';
   $table1 .= '</table><br><br><br>';
 
+  $table12 = '<table style="font-size:12px;">';
+  
+ 
+  $table12 .= '<tr>
+                <td width="100">Dari Tanggal </td>
+                <td width="15">:</td>
+                <td>'.$this->session->userdata('tanggal_awal').'</td>
+              </tr>';
+  $table12 .= '<tr>
+                <td width="100">Sampai Tanggal </td>
+                <td width="15">:</td>
+                <td>'.$this->session->userdata('tanggal_akhir').'</td>
+              </tr>';
+              
+  $table12 .= '</table><br><br>';
+  
+
+
   $table2 = '<table border="1" style="font-size:12px; margin:0 auto;">';
   $table2 .= '<tr style="background-color:lightgrey;">
                 <td style="text-align:center; font-weight:bold; margin:0 auto;" width="40" height="30">no </td>
@@ -85,7 +103,8 @@ $table1 = '<table border="0" width="650px">';
               </tr>';
               $no=1;
               foreach($laporan as $lp) {
-                $table2 .= '<tr>
+                $table2 .=  
+                '<tr>
                   <td style="text-align:center; font-family:sans-serif; font-size:12px;" height="20">'.$no++.' </td>
                   <td style="text-align:center; font-family:sans-serif; font-size:12px;">'.$lp->nama.' </td>
                   <td style="text-align:center; font-family:sans-serif; font-size:12px;">'.$lp->judul.' </td>
@@ -99,6 +118,7 @@ $table1 = '<table border="0" width="650px">';
 // print a block of text using Write()
 //$pdf->Write(0, $txt, '', 0, 'C', true, 0, false, false, 0);
 $pdf->WriteHTMLCell(0, 0, '','', $table1, 0,1,0,true,'L',true);
+$pdf->WriteHTMLCell(0, 0, '','', $table12, 0,1,0,true,'L',true);
 $pdf->WriteHTMLCell(0, 0, '','', $table2, 0,1,0,true,'L',true);
 // ---------------------------------------------------------
 

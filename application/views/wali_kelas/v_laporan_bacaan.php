@@ -7,7 +7,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form method="post" action="<?= base_url(); ?>admin/laporan/peminjaman_bacaan" class="form-horizontal">
+            <form method="post" action="<?= base_url(); ?>wali_kelas/laporan/peminjaman_bacaan" class="form-horizontal">
               <div class="box-body ">
 
 
@@ -34,24 +34,24 @@
                 </div>
 
                 <div class="col-sm-2">
-                  <a href="<?= base_url()?>admin/laporan/cetak_laporan" class="btn btn-sm btn-success" style="margin-left:-50px;"  target="_blank">Cetak Data</a>
+                  <a href="<?= base_url()?>wali_kelas/laporan/cetak_laporan" class="btn btn-sm btn-success" style="margin-left:-50px;"  target="_blank">Cetak Data</a>
                 </div>
-               
-
                 </div>
               </form>
+
+             
                  <!-- /.box-header -->
             <div class="box-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                 <th width="5%">No</th>
+                   <th width="5%">Nis</th>
                   <th width="5%">Nama Siswa</th>
                   <th width="10%">Nama Buku </th>
                   <th width="10%">Tgl Pinjam</th>
                   <th width="5%">Tgl Kembali</th>
                   <th width="5%">Tgl dikembalikan</th>
-                  <th width="5%">Kelas</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -62,38 +62,17 @@
                        <tr>
                        <td><?php echo $no++ ?></td>
                        <?php  $tr->id_pengembalian ?>
+                       <td><?= $tr->nis ?></td>
                        <td><?= $tr->nama?> </td>
                         <td><?= $tr->judul ?> </td>
                         <td><?= mediumdate_indo($tr->tgl_pinjam)?></td>
                         <td><?= mediumdate_indo($tr->tgl_kembali)?></td>
                         <td><?= mediumdate_indo($tr->tgl_kembalikan) ?></td>
-                        <td><?= $tr->nama_kelas ?></td>
                       </tr>
                       <?php endforeach; ?>
-              
             </tbody>
               </table>
             </div>
     
 
     <!-- /.content -->
-    
-    <script>
-      $(document).ready(function() {
-        $('#example1').dataTable({
-        "lengthMenu" : [[5,10,15,-1], [5,10,15,"All"]]
-     });
-
-      })
-    
-    </script>
-
-              
-  
-            
-            
-       
- 
-
-
-  

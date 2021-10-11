@@ -70,13 +70,13 @@
               <div class="col-lg-4 col-lg-offset-1">
                 <div class="form-group">
                   <label for="tgl_pinjam" class="control-label">Tanggal Pinjam</label>
-                    <input type="date" class="form-control" name="tgl_pinjam" id="tgl_pinjam" value="<?= $tgl_pinjam ?>">
+                    <input type="date" class="form-control" name="tgl_pinjam" id="tgl_pinjam" value="<?= $tgl_pinjam ?>" readonly>
                     <?php echo form_error('tgl_pinjam','<div class="text-small text-danger">','</div>'); ?>
                   </div>
 
                 <div class="form-group">
                   <label for="tgl_kembali" class="control-label">Tanggal Kembali</label>
-                    <input type="date" class="form-control" name="tgl_kembali" id="tgl_kembali" value="<?= $tgl_kembali ?>">
+                    <input type="date" class="form-control" name="tgl_kembali" id="tgl_kembali" value="<?= $tgl_kembali ?>" readonly>
                     <?php echo form_error('tgl_kembali','<div class="text-small text-danger">','</div>'); ?>
                   </div>
 

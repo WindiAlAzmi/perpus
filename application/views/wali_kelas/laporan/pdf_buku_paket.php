@@ -91,21 +91,21 @@ $table1 = '<table border="0" width="650px">';
   $table2 = '<table border="1" style="font-size:12px; margin:0 auto;">';
   $table2 .= '<tr style="background-color:lightgrey;">
                 <td style="text-align:center; font-weight:bold; margin:0 auto;" width="40" height="30">no </td>
+                <td style="text-align:center; font-weight:bold;" width="70" >NIS</td>
                 <td style="text-align:center; font-weight:bold;"  width="100">Nama Siswa </td>
                 <td style="text-align:center; font-weight:bold;" width="150">Nama Buku</td>
                 <td style="text-align:center; font-weight:bold;" width="150">Tanggal Pinjam</td>
                 <td style="text-align:center; font-weight:bold;"  width="150">Tanggal Kembali</td>
-                <td style="text-align:center; font-weight:bold;" width="40" > Kelas</td>
               </tr>';
               $no=1;
               foreach($laporan as $lp) {
                 $table2 .= '<tr>
                   <td style="text-align:center; font-family:sans-serif; font-size:12px;" height="20">'.$no++.' </td>
+                  <td style="text-align:center; font-family:sans-serif; font-size:12px;">'.$lp->nis.' </td>
                   <td style="text-align:center; font-family:sans-serif; font-size:12px;">'.$lp->nama.' </td>
                   <td style="text-align:center; font-family:sans-serif; font-size:12px;">'.$lp->judul.' </td>
                   <td style="text-align:center; font-family:sans-serif; font-size:12px;">'.mediumdate_indo($lp->tgl_pinjam).'</td>
                   <td style="text-align:center; font-family:sans-serif; font-size:12px;">'.mediumdate_indo($lp->tgl_kembalikan).'</td>
-                  <td style="text-align:center; font-family:sans-serif; font-size:12px;">'.$lp->nama_kelas.' </td>
               </tr>';
               }
   $table2 .= '</table>';

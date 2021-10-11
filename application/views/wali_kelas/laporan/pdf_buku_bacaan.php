@@ -33,7 +33,7 @@ $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8',
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('Nicola Asuni');
-$pdf->SetTitle('Laporan Peminjaman Buku Paket Pelajaran');
+$pdf->SetTitle('Laporan Peminjaman Buku Bacaan');
 $pdf->SetSubject('TCPDF Tutorial');
 $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
 
@@ -70,11 +70,13 @@ $pdf->AddPage();
 // set some text to print
 $table1 = '<table border="0" width="650px">';
   $table1 .= '<tr>
-                <td style="text-align:center; font-family:sans-serif; font-size:16px; font-weight:bold;">Laporan Peminjaman Buku Paket Pelajaran</td>
+                <td style="text-align:center; font-family:sans-serif; font-size:16px; font-weight:bold;">Laporan Peminjaman Buku Bacaan</td>
               </tr>';
   $table1 .= '</table><br><br><br>';
 
   $table12 = '<table style="font-size:12px;">';
+  
+ 
   $table12 .= '<tr>
                 <td width="100">Dari Tanggal </td>
                 <td width="15">:</td>
@@ -87,25 +89,28 @@ $table1 = '<table border="0" width="650px">';
               </tr>';
               
   $table12 .= '</table><br><br>';
+  
+
 
   $table2 = '<table border="1" style="font-size:12px; margin:0 auto;">';
   $table2 .= '<tr style="background-color:lightgrey;">
                 <td style="text-align:center; font-weight:bold; margin:0 auto;" width="40" height="30">no </td>
+                <td style="text-align:center; font-weight:bold;" width="70" >NIS</td>
                 <td style="text-align:center; font-weight:bold;"  width="100">Nama Siswa </td>
                 <td style="text-align:center; font-weight:bold;" width="150">Nama Buku</td>
                 <td style="text-align:center; font-weight:bold;" width="150">Tanggal Pinjam</td>
                 <td style="text-align:center; font-weight:bold;"  width="150">Tanggal Kembali</td>
-                <td style="text-align:center; font-weight:bold;" width="40" > Kelas</td>
               </tr>';
               $no=1;
               foreach($laporan as $lp) {
-                $table2 .= '<tr>
+                $table2 .=  
+                '<tr>
                   <td style="text-align:center; font-family:sans-serif; font-size:12px;" height="20">'.$no++.' </td>
+                  <td style="text-align:center; font-family:sans-serif; font-size:12px;">'.$lp->nis.' </td>
                   <td style="text-align:center; font-family:sans-serif; font-size:12px;">'.$lp->nama.' </td>
                   <td style="text-align:center; font-family:sans-serif; font-size:12px;">'.$lp->judul.' </td>
                   <td style="text-align:center; font-family:sans-serif; font-size:12px;">'.mediumdate_indo($lp->tgl_pinjam).'</td>
                   <td style="text-align:center; font-family:sans-serif; font-size:12px;">'.mediumdate_indo($lp->tgl_kembalikan).'</td>
-                  <td style="text-align:center; font-family:sans-serif; font-size:12px;">'.$lp->nama_kelas.' </td>
               </tr>';
               }
   $table2 .= '</table>';
@@ -118,7 +123,7 @@ $pdf->WriteHTMLCell(0, 0, '','', $table2, 0,1,0,true,'L',true);
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('peminjaman buku paket pelajaran.pdf', 'I');
+$pdf->Output('peminjaman buku bacaan.pdf', 'I');
 
 //============================================================+
 // END OF FILE
